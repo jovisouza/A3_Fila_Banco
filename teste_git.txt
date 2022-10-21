@@ -1,1 +1,123 @@
 teste de git
+
+git status
+
+git init
+
+dir
+cd..
+dir
+
+cd/
+cd/c
+
+git init
+
+git config user.name HelioArai
+
+git config user.email helio.arai@hotmail.com
+
+git add .
+
+git commit -m "meu primeiro commit"
+
+git status
+
+git log
+
+
+    (pegar link do github)
+
+git remote -v
+
+git push origin master
+
+git status
+
+git log
+
+git push
+
+git push --set-upsteam origin master
+git push origin master
+
+git clone https://github.com/helioarai/EmersonPaduan  
+
+git pull
+
+git status
+
+git add .
+
+git commit -m "segundo commit"
+
+git log
+
+git log --one line
+
+git push
+
+git push origin master
+
+git clone
+
+git pull
+
+git clone
+
+git pull
+
+git clone https://github.com/helioarai/EmersonPaduan 
+
+git pull
+
+git add*
+
+git commit -m "segundo commit da aula 01_08_2022"
+
+git push origin mastergit 
+
+git log
+
+git branch -M "main"      mudar o branch de master para main
+
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
