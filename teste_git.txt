@@ -28,6 +28,8 @@ git log
 
     (pegar link do github)
 
+git remote add irigin http://github.com/helioarai/A3_Fila_Banco
+
 git remote -v
 
 git push origin master
