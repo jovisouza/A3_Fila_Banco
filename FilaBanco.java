@@ -1,5 +1,4 @@
 
-//Versão Beta
 package helioarai;
 
 import java.util.*;
@@ -14,15 +13,8 @@ public class FilaBanco {
         ClientAttendance listaPessoa = new ClientAttendance(); // fila de pessoas novas
         ClientAttendance listaPessoaIdosa = new ClientAttendance(); // fila de pessoas idosas
         
-        listaPessoa.addClient (23,"Antonio Marcos",0);
-        listaPessoaIdosa.addClient (66,"Sergio da Silva",0); 
-        listaPessoa.addClient (15,"Maria das Flores",1);
-        listaPessoa.addClient (44,"Filomena Canedo",0);
-        listaPessoaIdosa.addClient (78,"Matusalen",0);
-        listaPessoaIdosa.addClient (69,"Caindo do ceu",0);
-
-        int naoIdoso=3;
-        int idoso = 3 ;
+        int naoIdoso=0;
+        int idoso = 0 ;
        
         int escolha=0;
         int contador=0;// 0 e 1 e idoso e 2 e novo
@@ -33,22 +25,30 @@ public class FilaBanco {
         
         switch (escolha){
             case 1 : {   
-                String nomeCliente= AuxiliarMenu.insereNome();//linha nova
+                
+            if (AuxiliarMenu.maxSize((listaPessoa.lenght())+listaPessoaIdosa.lenght())) {
+                System.out.println("O numero de cliente aguardando foi excedido\n");
+                break;
+            }
+                
+                String nomeCliente= AuxiliarMenu.insereNome();
 
-                int idadeCliente = AuxiliarMenu.insereIdade(); // linha nova
+                int idadeCliente = AuxiliarMenu.insereIdade(); 
                 
                
-                naoIdoso = listaPessoa.lenght();//novo 01_11
-                idoso = listaPessoaIdosa.lenght();//novo 01_11
-                if (idadeCliente<60){
-                    listaPessoa.addClient (idadeCliente,nomeCliente,(naoIdoso));}
-                else {listaPessoaIdosa.addClient (idadeCliente,nomeCliente,(idoso));}
+                naoIdoso = listaPessoa.lenght();
+                idoso = listaPessoaIdosa.lenght();
+                
+                if (AuxiliarMenu.isElderly(idadeCliente)){
+                    listaPessoaIdosa.addClient (idadeCliente,nomeCliente,(idoso));}
+                else {listaPessoa.addClient (idadeCliente,nomeCliente,(naoIdoso));}
+                
                 break;
             }
             
             case 2 :
-                    if (listaPessoa.isEmpty() || listaPessoaIdosa.isEmpty()){
-                        System.out.println("A fila esta vazia, aguardando chegada de clientes");}// rotina tem que sair do case
+                    if (listaPessoa.isEmpty() && listaPessoaIdosa.isEmpty()){
+                        System.out.println("A fila esta vazia, aguardando chegada de clientes");}
                     if (listaPessoaIdosa.lenght()>0 && contador<2){ 
                         listaPessoaIdosa.showNext();
                     }
@@ -73,7 +73,7 @@ public class FilaBanco {
                     }
                     break;
 
-            case 4 : System.out.println("O numero total de clientes esperando e de : " + (listaPessoa.numClients()+listaPessoaIdosa.numClients()));
+            case 4 : System.out.println("O numero total de clientes esperando e de : " + (listaPessoa.numClients()+listaPessoaIdosa.numClients())+"\n" + "Numero de clientes idosos esperando e de : " +listaPessoaIdosa.numClients() );
                      break;
                      
             case 5 : System.out.println("Fila dos idosos : ");
