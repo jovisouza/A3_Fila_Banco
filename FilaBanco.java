@@ -10,8 +10,8 @@ public class FilaBanco {
         
         Scanner ler = new Scanner (System.in);
         
-        ClientAttendance listaPessoa = new ClientAttendance(); // fila de pessoas novas
-        ClientAttendance listaPessoaIdosa = new ClientAttendance(); // fila de pessoas idosas
+        ManageAttendance listaPessoa = new ManageAttendance(); // fila de pessoas novas
+        ManageAttendance listaPessoaIdosa = new ManageAttendance(); // fila de pessoas idosas
         
         int naoIdoso=0;
         int idoso = 0 ;
